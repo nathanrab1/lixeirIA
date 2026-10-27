@@ -182,11 +182,13 @@ async function loop() {
 
   if (topo.probability > 0.9 && topo.className !== ultimaClasse) {
     ultimaClasse = topo.className;
-    // Mapeia Class 1 → "1" e Class 2 → "0"
+    // Mapeia Class 1 → "1", Class 2 → "2" e Class 3 → "3"
     if (topo.className === "Class 1") {
       enviar("1");
     } else if (topo.className === "Class 2") {
-      enviar("0");
+      enviar("2");
+    } else if (topo.className === "Class 3") {
+      enviar("3");
     }
   }
   requestAnimationFrame(loop);
